@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import PhotoStrip from "./PhotoStrip";
 
 export default function Camera() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -133,6 +134,7 @@ export default function Camera() {
           />
         ))}
       </div>
+      {photos.length === totalShots && <PhotoStrip photos={photos} />}
     </div>
   );
 }
